@@ -480,36 +480,36 @@ while true; do
   clear
 
   case "$MENU_CHOICE" in
-    1)
-      install_theme
-      ;;
-    2)
-      uninstall_theme
-      ;;
-      3)
-      configure_wings
-      ;;
-      4)
-      create_node
-      ;;
-      5)
-      uninstall_panel
-      ;;
-      6)
-      install_themeSteeler
-      ;;
-      7)
-      hackback_panel
-      ;;
-      8)
-      install_panel
-      ;;
-    x)
-      echo "Keluar dari skrip."
-      exit 0
-      ;;
-    *)
-      echo "Pilihan tidak valid, silahkan coba lagi."
-      ;;
-  esac
+  1)
+    install_theme
+    ;;
+  2)
+    uninstall_theme
+    ;;
+  3)
+    configure_wings
+    ;;
+  4)
+    create_node
+    ;;
+  5)
+    uninstall_panel
+    ;;
+  6)
+    install_themeSteeler
+    ;;
+  7)
+    hackback_panel
+    ;;
+  8)
+    install_panel
+    ;;
+  x)
+    echo "Keluar dari skrip."
+    exit 0
+    ;;
+  *)
+    echo "Pilihan tidak valid, silahkan coba lagi."
+    ;;
+esac
 done
