@@ -24,7 +24,6 @@ display_welcome() {
   echo -e "682130756675"
   echo -e "𝗖𝗥𝗘𝗗𝗜𝗧𝗦 :"
   echo -e "BumiiKousei"
-  sleep 4
   clear
 }
 
@@ -62,7 +61,7 @@ check_token() {
   echo -e "${YELLOW}MASUKAN AKSES TOKEN :${NC}"
   read -r USER_TOKEN
 
-  if [ "$USER_TOKEN" = "Bum11Kousei" ]; then
+  if [ "$USER_TOKEN" = "Bum11" ]; then
     echo -e "${GREEN}AKSES BERHASIL${NC}}"
   else
     echo -e "${GREEN}BUY / ASK BUMIIKOUSEI IF YOU DON'T KNOW THE TOKEN ${NC}"
@@ -408,6 +407,52 @@ EOF
   
   exit 0
 }
+
+# Uninstall theme
+install_panel() {
+  echo -e "                                                       "
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  echo -e "${GREEN}[+]                 PROSES INSTALL PTERODATHYL             [+]${NC}"
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  sleep 2
+  clear
+
+# Minta input dari pengguna
+read -p "Masukkan subdomain: " subdomain
+read -p "Masukkan Email: " email
+read -p "percobaan ke berapa: " try
+read -p "Masukkan Password Login: " password
+
+bash <(curl -s https://pterodactyl-installer.se) <<EOF
+0
+$try
+$try
+$try
+Asia/Jakarta
+$email
+$email
+asia
+asia
+asia
+$password
+$subdomain
+y
+y
+y
+y
+yes
+y
+EOF
+
+  echo -e "                                                       "
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  echo -e "${GREEN}[+]              INSTALL PTERODATHYL SUCCESS             [+]${NC}"
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  echo -e "                                                       "
+  sleep 2
+  
+  exit 0
+}
 # Main script
 display_welcome
 install_jq
@@ -428,6 +473,7 @@ while true; do
   echo "5. Uninstall Panel"
   echo "6. Setteler Theme"
   echo "7. Hack Back Panel"
+  echo "8. Install Panel"
   echo "x. Exit"
   echo -e "Masukkan pilihan (1/2/x):"
   read -r MENU_CHOICE
