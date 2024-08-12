@@ -302,7 +302,7 @@ EOF
 
 # Membuat node baru
 php artisan p:node:make <<EOF
-$node_name
+BOT WHATSAPP
 INSTALLED WITH LOVE BY BUMIIKOUSEI 
 $locid
 https
