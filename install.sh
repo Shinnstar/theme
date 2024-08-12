@@ -500,9 +500,9 @@ while true; do
       ;;
       7)
       hackback_panel
+      ;;
       8)
       install_panel
-      ;;
       ;;
     x)
       echo "Keluar dari skrip."
