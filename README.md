@@ -4,4 +4,4 @@
 
 *INSTALL PANEL*
 
-bash <(curl https://raw.githubusercontent.com/vallzprivate/theme/main/installpanelv2.sh)
+```bash <(curl https://raw.githubusercontent.com/vallzprivate/theme/main/installpanelv2.sh)```
