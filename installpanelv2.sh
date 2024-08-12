@@ -3,7 +3,7 @@
 # Minta input dari pengguna
 read -p "Masukkan subdomain: " subdomain
 read -p "Masukkan Email: " email
-read -p "percobaan ke brpa" try
+read -p "percobaan ke brpa " try
 read -p "Masukkan Password Login: " password
 
 bash <(curl -s https://pterodactyl-installer.se) <<EOF
