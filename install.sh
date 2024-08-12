@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 # Color
 BLUE='\033[0;34m'       
@@ -441,7 +441,7 @@ y
 y
 y
 yes
-y
+Y
 EOF
 
   echo -e "                                                       "
