@@ -31,19 +31,19 @@ display_welcome() {
 install_jq() {
   echo -e "                                                       "
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]               UPDATE & INSTALL                  [+]${NC}"
+  echo -e "${BLUE}[+]                 UPDATE & INSTALL                   [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sudo apt update && sudo apt install -y jq
   if [ $? -eq 0 ]; then
     echo -e "                                                       "
     echo -e "${GREEN}[+] =============================================== [+]${NC}"
-    echo -e "${GREEN}[+]              INSTALL BERHASIL                [+]${NC}"
+    echo -e "${GREEN}[+]                INSTALL BERHASIL                    [+]${NC}"
     echo -e "${GREEN}[+] =============================================== [+]${NC}"
   else
     echo -e "                                                       "
     echo -e "${RED}[+] =============================================== [+]${NC}"
-    echo -e "${RED}[+]                INSTALL GAGAL                   [+]${NC}"
+    echo -e "${RED}[+]                   INSTALL GAGAL                     [+]${NC}"
     echo -e "${RED}[+] =============================================== [+]${NC}"
     exit 1
   fi
@@ -55,7 +55,7 @@ install_jq() {
 check_token() {
   echo -e "                                                       "
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                LICENSE BY BUMIIKOUSEI              [+]${NC}"
+  echo -e "${BLUE}[+]                LICENSE BY BUMIIKOUSEI               [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   echo -e "${YELLOW}MASUKAN AKSES TOKEN :${NC}"
@@ -500,6 +500,9 @@ while true; do
       ;;
       7)
       hackback_panel
+      8)
+      install_panel
+      ;;
       ;;
     x)
       echo "Keluar dari skrip."
