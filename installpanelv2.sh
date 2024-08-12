@@ -23,4 +23,5 @@ y
 y
 y
 yes
+A
 EOF
