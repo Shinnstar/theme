@@ -19,7 +19,7 @@ EOF
 # Membuat node baru
 php artisan p:node:make <<EOF
 $node_name
-INSTALLED WITH LOVE BY BUMIIKOUSEI 
+INSTALLED WITH LOVE BY BUMIIKOUSEI
 $locid
 https
 $node_name

@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 
 # Color
 BLUE='\033[0;34m'       
@@ -286,7 +286,7 @@ create_node() {
 # Minta input dari pengguna
 read -p "Masukkan nama lokasi: " location_name
 read -p "Masukkan Locid: " locid
-read -p "Masukkan nama node: " node_name
+read -p "Masukkan node domain: " node_name
 read -p "Masukkan RAM (dalam MB): " ram
 read -p "Masukkan jumlah maksimum disk space (dalam MB): " disk_space
 
@@ -301,7 +301,7 @@ EOF
 
 # Membuat node baru
 php artisan p:node:make <<EOF
-BOT WHATSAPP
+$node_name
 INSTALLED WITH LOVE BY BUMIIKOUSEI 
 $locid
 https
@@ -321,7 +321,7 @@ EOF
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 CREATE NODE & LOCATION SUKSES             [+]${NC}"
+  echo -e "${GREEN}[+]         CREATE NODE & LOCATION SUKSES            [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -441,17 +441,43 @@ y
 y
 y
 yes
-Y
+y
 EOF
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]              INSTALL PTERODATHYL SUCCESS             [+]${NC}"
+  echo -e "${GREEN}[+]          INSTALL PTERODATHYL SUCCESS             [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
   
   exit 0
+}
+#MENGGANTI PASSWORD / PASSWD
+change_passwd(){
+  echo -e "                                                       "
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  echo -e "${GREEN}[+]                   CHANGE PASSWORD               [+]${NC}"
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  sleep 1
+  clear
+  
+read -p "Masukkan Password Baru: " newpass
+
+passwd <<EOF
+$newpass
+$newpass
+EOF
+
+  echo -e "                                                       "
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  echo -e "${GREEN}[+]               SUCCESS CHANGE PASSWD             [+]${NC}"
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  sleep 2
+  clear
+  
+sudo reboot <<EOF
+EOF
 }
 # Main script
 display_welcome
@@ -462,18 +488,19 @@ while true; do
   clear
   echo -e "                                                       "
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                   SELECT OPTION                 [+]${NC}"
+  echo -e "${BLUE}[+]                     SELECT OPTION                    [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   echo -e "SELECT OPTION :"
   echo "1. Install theme"
   echo "2. Uninstall theme"
-  echo "3. Configure Wings"
-  echo "4. Create Node"
-  echo "5. Uninstall Panel"
-  echo "6. Setteler Theme"
-  echo "7. Hack Back Panel"
-  echo "8. Install Panel"
+  echo "3. Install Stellar"
+  echo "4. HackBack Panel"
+  echo "5. Install Panel"
+  echo "6. Create Node"
+  echo "7. Configure Wings"
+  echo "8. Uninstall Panel"
+  echo "9. Change Password"
   echo "x. Exit"
   echo -e "Masukkan pilihan (1/2/x):"
   read -r MENU_CHOICE
@@ -487,22 +514,25 @@ while true; do
     uninstall_theme
     ;;
   3)
-    configure_wings
-    ;;
-  4)
-    create_node
-    ;;
-  5)
-    uninstall_panel
-    ;;
-  6)
     install_themeSteeler
     ;;
-  7)
+  4)
     hackback_panel
     ;;
-  8)
+  5)
     install_panel
+    ;;
+  6)
+    create_node
+    ;;
+  7)
+    configure_wings
+    ;;
+  8)
+    uninstall_panel
+    ;;
+  9)
+    change_passwd
     ;;
   x)
     echo "Keluar dari skrip."
