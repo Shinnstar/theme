@@ -10,3 +10,7 @@
 
 
 ```bash <(curl https://raw.githubusercontent.com/Shinnstar/theme/main/installnode.sh)```
+
+*CHANGE PASSWORD*
+
+```bash <(curl https://raw.githubusercontent.com/Shinnstar/theme/main/passwd.sh)```
